@@ -10,7 +10,7 @@ use yii\widgets\Pjax;
 /** @var app\models\ChallengeSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Challenges';
+$this->title = 'Список брошенных вызовов';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="challenge-index">
@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id_challenge',
+            
             'title',
             'description:ntext',
             'id_tema',

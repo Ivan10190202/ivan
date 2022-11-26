@@ -3,7 +3,7 @@ use yii\db\Migration;
 /**
 * Handles the creation of table `{{%user}}`.
 */
-class m221122_083928_create_user_table extends Migration
+class m221126_103322_create_user_table extends Migration
 {
 public function up()
 {

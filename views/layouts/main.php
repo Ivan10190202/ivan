@@ -28,7 +28,8 @@ AppAsset::register($this);
 <header>
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => "<img style='height: 80px; margin-right: 200px;' src='../web/logo.png' alt='logo'>",
+        
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
@@ -39,7 +40,7 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Домашняя', 'url' => ['/site/index']],
             ['label' => 'Вызовы', 'url' => ['/challenge/index']],
-            ['label' => 'О нас', 'url' => ['/site/about']],
+            ['label' => 'Личный кабинет', 'url' => ['/site/about']],
             ['label' => 'Регистрация', 'url' => ['/site/signup']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Вход', 'url' => ['/site/login']]
@@ -71,7 +72,7 @@ AppAsset::register($this);
 
 <footer class="footer mt-auto py-3 text-muted">
     <div class="container">
-        <p class="float-left">&copy; My Company <?= date('Y') ?></p>
+        <img src="../web/logo2.png" alt="logo" style="height: 40px; background-size:100%; margin-right: 20px;";> <?= date('Y') ?>
         <p class="float-right"><?= Yii::powered() ?></p>
     </div>
 </footer>

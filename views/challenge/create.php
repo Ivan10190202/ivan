@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /** @var app\models\Challenge $model */
 
 $this->title = 'Создать вызов';
-$this->params['breadcrumbs'][] = ['label' => 'Challenges', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+//$this->params['breadcrumbs'][] = ['label' => 'Вызов', 'url' => ['index']];
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="challenge-create">
 
