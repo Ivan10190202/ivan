@@ -10,30 +10,33 @@ use yii\widgets\Pjax;
 /** @var app\models\ChallengeSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Личный кабинет';
-
-$this->title = 'Список брошенных вызовов';
+$this->title = 'Список брошенных вызовов:';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="challenge-index">
+<div class="challenge-index" style="display:flex;">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
+    <p style="margin-left:100px; margin-top:9px;">
         <?= Html::a('Бросить вызов', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-
-
-<div class="user-index">
-    <h1 style="margin-top: 100px;" ><?= Html::encode($this->title) ?></h1>
-    <div style="padding: 30px; width: 100%; background-color: #343A40; border-radius: 30px; margin-top:60px;">
-        <p style=" color: white; font-size: 20px; margin-bottom: 0px;">Ваш ник: </p>
-        <h3 style="color: white; font-size: 28px;"><?=Yii::$app->user->identity->username;?></h3>
-        <p style="color: white; font-size: 20px; margin-top: 30px; margin-bottom: 0px;">Почта: </p>
-        <h3 style="color: white; font-size: 28px;  margin-bottom: 30px;"><?=Yii::$app->user->identity->email;?></h3>
-        <p style="color: white; font-size: 20px; margin-top: 30px; margin-bottom: 0px;">Ваш зашифрованный пароль: </p>
-        <h3 style="color: white; font-size: 28px; width:100%;"><?=Yii::$app->user->identity->password_hash;?></h3>    
-    </div>
 </div>
+<div>
+    <?php foreach ($challenge as $one):?>
 
+        <div style="width:100%; border: 5px solid orange;border-radius:20px; padding: 30px; margin-top:50px;" >
+            <h2 style="margin-bottom:40px;"><?=$one->title?></h2>
+            <p style="font-weight:bold; margin: 0;">Описание:</p>
+            <p style="margin: 0; margin-bottom:10px;"><?=$one->description?></p>
+            <p style="font-weight:bold; margin: 0; ">Дедлайн:</p>
+            <p style="margin: 0; margin-bottom:10px;"><?=$one->data_close?></p>
+            <p style="font-weight:bold; margin: 0;">Дата создания:</p>
+            <p style="margin: 0;margin-bottom:10px;"><?=$one->data_create?></p>
+            <a style="margin-top:40px;" class="btn btn-outline-success" href="http://ivan/web/index.php?r=challenge%2Findex" title="delete" aria-label="Delete"
+                       data-pjax="0" data-confirm="Вы действительно хотите принять вызов: <?=$one->title?>?" data-method="post">Принять вызов</a>
+
+        </div>
+
+    <?php endforeach; ?>
+    
 </div>

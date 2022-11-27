@@ -9,7 +9,7 @@ $this->title = 'Создать вызов';
 //$this->params['breadcrumbs'][] = ['label' => 'Вызов', 'url' => ['index']];
 //$this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="challenge-create">
+<div class="challenge-create" style="margin-top:100px;">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

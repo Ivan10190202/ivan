@@ -16,10 +16,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'id_tema')->dropDownList(['Спорт','Развлечение','Учеба','Бизнес','Другое']) ?>
-
-    <?= $form->field($model, 'id_vicrory')->textInput() ?>
-
 
     <?= $form->field($model, 'data_close')->textInput() ?>
 

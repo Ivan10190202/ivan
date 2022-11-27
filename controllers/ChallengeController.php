@@ -40,10 +40,11 @@ class ChallengeController extends Controller
     {
         $searchModel = new ChallengeSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
-
+        $challenge = Challenge::find()->all();
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'challenge'=>$challenge,
         ]);
     }
 
