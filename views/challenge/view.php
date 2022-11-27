@@ -16,8 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id_challenge' => $model->id_challenge], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id_challenge' => $model->id_challenge], [
+        <?= Html::a('Изменить', ['update', 'id_challenge' => $model->id_challenge], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Удалить', ['delete', 'id_challenge' => $model->id_challenge], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -29,15 +29,15 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id_challenge',
             'title',
             'description:ntext',
-            'id_tema',
-            'id_chat',
-            'id_vicrory',
             'data_create',
             'data_close',
         ],
     ]) ?>
+
+<p style="margin-top: 50px;">
+        <?= Html::a('Сохранить', ['index'], ['class' => 'btn btn-success']) ?>
+    </p>
 
 </div>

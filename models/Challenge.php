@@ -33,10 +33,9 @@ class Challenge extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'description', 'id_tema', 'id_chat', 'id_vicrory', 'data_create', 'data_close'], 'required'],
+            [['title', 'description', 'data_close'], 'required'],
             [['description'], 'string'],
-            [['id_tema', 'id_chat', 'id_vicrory'], 'integer'],
-            [['data_create', 'data_close'], 'safe'],
+            [[ 'data_close', 'data_create'], 'safe'],
             [['title'], 'string', 'max' => 200],
         ];
     }
@@ -50,8 +49,7 @@ class Challenge extends \yii\db\ActiveRecord
             'id_challenge' => 'Id Challenge',
             'title' => 'Заголовок',
             'description' => 'Описание',
-            'id_tema' => 'Категория',
-            'id_vicrory' => 'Ставка',
+            'data_create' => 'Дата создания',
             'data_close' => 'Дедлайн',
         ];
     }

@@ -6,6 +6,9 @@ use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use yii\widgets\DetailView;
+
+/** @var app\models\Challenge $model */
 /** @var yii\web\View $this */
 /** @var app\models\ChallengeSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
@@ -32,9 +35,20 @@ $this->params['breadcrumbs'][] = $this->title;
             <p style="margin: 0; margin-bottom:10px;"><?=$one->data_close?></p>
             <p style="font-weight:bold; margin: 0;">Дата создания:</p>
             <p style="margin: 0;margin-bottom:10px;"><?=$one->data_create?></p>
-            <a style="margin-top:40px;" class="btn btn-outline-success" href="http://ivan/web/index.php?r=challenge%2Findex" title="delete" aria-label="Delete"
-                       data-pjax="0" data-confirm="Вы действительно хотите принять вызов: <?=$one->title?>?" data-method="post">Принять вызов</a>
 
+            <div style="display: flex;">
+            <a style="margin-right:30px;" class="btn btn-outline-success" href="http://ivan/web/index.php?r=challenge%2Findex" title="delete" aria-label="Delete"
+                       data-pjax="0" data-confirm="Вы действительно хотите принять вызов: <?=$one->title?>?" data-method="post">Принять вызов</a>
+            <p style="margin:0;">
+                <?= Html::a('Удалить', ['index', 'id_challenge' => $model->id_challenge], [
+                'class' => 'btn btn-outline-danger',
+                'data' => [
+                    'confirm' => 'Вы действительно хотите удалить?',
+                    'method' => 'post',
+                ],
+                ]) ?>
+            </p>
+            </div>
         </div>
 
     <?php endforeach; ?>
